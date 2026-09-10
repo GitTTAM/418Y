@@ -35,10 +35,25 @@ function getPriorityLabel(priority) {
     return "High";
 }
 
+function getPriorityRank(priority) {
+    if (priority === "high") {
+        return 3;
+    }
+
+    if (priority === "medium") {
+        return 2;
+    }
+
+    return 1;
+}
+
 function displayTasks() {
     taskList.innerHTML = "";
+    const orderedTasks = tasks.slice().sort(function(firstTask, secondTask) {
+        return getPriorityRank(secondTask.priority) - getPriorityRank(firstTask.priority);
+    });
 
-    tasks.forEach(function(task, index) {
+    orderedTasks.forEach(function(task) {
         const taskElement = document.createElement("div");
         taskElement.className = "task-item";
 
@@ -78,7 +93,7 @@ function displayTasks() {
         deleteButton.type = "button";
         deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", function() {
-            tasks.splice(index, 1);
+            tasks.splice(tasks.indexOf(task), 1);
             displayTasks();
         });
 
