@@ -1,0 +1,24 @@
+{
+  "name": "418y",
+  "version": "1.0.0",
+  "description": "Author: Matt Lawrence",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitTTAM/418Y.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GitTTAM/418Y/issues"
+  },
+  "homepage": "https://github.com/GitTTAM/418Y#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
